@@ -1,4 +1,4 @@
-console.log('Client side javascript file is loaded');
+// console.log('Client side javascript file is loaded');
 /* 
 1. FETCH - browser api, not part of JS
 2. use in modern browsers
