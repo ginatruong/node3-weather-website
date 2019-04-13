@@ -15,6 +15,10 @@ console.log(
 
 const app = express();
 // Define paths for Express config
+
+//heroku server
+const port = process.env.PORT || 3000;
+
 const publicDirectoryPath = path.join(__dirname, '../public'); /*app.use */
 const viewsPath = path.join(
   __dirname,
@@ -163,8 +167,9 @@ app.get('*', (req, res) => {
 // node src/app.js
 // server never closes - gotta quit ctrl C
 // start server, tell express to listen for requests (process.env.PORT = 3000, process.env.IP -CLOUD9, CALLBACKFUNCTION)
-app.listen(3000, () => {
-  console.log('Server is up on port 3000.');
+//heroku port value - running on server - change const port = const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is up on port:${port} .`);
 });
 
 /* colt steel STAR OR SPLAT ROUTER - do not put it first - the order of routes MATTER ---IT OVERRIDES ALL THE ROUTES, BETTER TO PUT AT THE END*/
